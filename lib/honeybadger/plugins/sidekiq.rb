@@ -62,7 +62,11 @@ module Honeybadger
 
                 puts "[BB] inside the modified version of HB! Sending #{ex.inspect} with #{opts.inspect}"
 
-                Honeybadger.notify(ex, opts)
+                result = Honeybadger.notify(ex, opts)
+
+                puts "[BB] inside the modified version of HB! sent #{opts.inspect} and got result #{result.inspect}"
+
+                result
               }
             end
           end
